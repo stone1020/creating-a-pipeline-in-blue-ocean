@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm install --registry=https://registry.npm.taobao.org  --unsafe-perm'
+        sh 'node -v'
       }
     }
 
