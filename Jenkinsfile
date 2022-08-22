@@ -19,5 +19,11 @@ pipeline {
       }
     }
 
+    stage('Deliver') {
+      steps {
+        sh 'java -version'
+      }
+    }
+
   }
 }
