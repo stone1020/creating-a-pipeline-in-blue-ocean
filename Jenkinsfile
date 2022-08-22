@@ -7,7 +7,7 @@ pipeline {
 
   }
   stages {
-    stage('error') {
+    stage('test') {
       steps {
         sh 'pwd'
       }
