@@ -7,7 +7,7 @@ pipeline {
 
   }
   stages {
-    stage('test') {
+    stage('build') {
       steps {
         sh 'pwd'
       }
