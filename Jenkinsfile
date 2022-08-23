@@ -2,6 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Maven Build') {
+      agent any
       steps {
         sh 'echo \'Maven Building....\''
         echo 'Maven Build'
