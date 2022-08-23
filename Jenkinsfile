@@ -4,6 +4,7 @@ pipeline {
     stage('Maven Build') {
       steps {
         sh 'echo \'Maven Building....\''
+        echo 'Maven Build'
       }
     }
 
