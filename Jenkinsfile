@@ -9,19 +9,19 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn --version'
+        sh 'echo \'Building....\''
       }
     }
 
     stage('Test') {
       steps {
-        sh 'pwd'
+        sh 'echo \'Testing....\''
       }
     }
 
     stage('Deliver') {
       steps {
-        sh 'java -version'
+        sh 'echo \'Delivering....\''
       }
     }
 
