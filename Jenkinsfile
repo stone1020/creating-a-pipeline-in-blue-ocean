@@ -2,10 +2,27 @@ pipeline {
   agent any
   stages {
     stage('Maven Build') {
-      agent any
-      steps {
-        sh 'echo \'Maven Building....\''
-        echo 'Maven Build'
+      parallel {
+        stage('Maven Build') {
+          agent any
+          steps {
+            sh 'echo \'Maven Building....\''
+            echo 'Maven Build'
+          }
+        }
+
+        stage('Maven Build 2') {
+          steps {
+            sh 'echo \'Maven Building 2 ....\''
+          }
+        }
+
+        stage('Maven Building 3') {
+          steps {
+            sh 'echo \'Maven Building 3 ....\''
+          }
+        }
+
       }
     }
 
