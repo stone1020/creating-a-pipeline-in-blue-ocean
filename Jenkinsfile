@@ -7,9 +7,9 @@ pipeline {
 
   }
   stages {
-    stage('Build') {
+    stage('Maven Build') {
       steps {
-        sh 'echo \'Building....\''
+        sh 'echo \'Maven Building....\''
       }
     }
 
@@ -22,6 +22,24 @@ pipeline {
     stage('Deliver') {
       steps {
         sh 'echo \'Delivering....\''
+      }
+    }
+
+    stage('Sonar Check') {
+      steps {
+        sh 'echo \'Sonar Checking....\''
+      }
+    }
+
+    stage('Docker Build') {
+      steps {
+        sh 'echo \'Docker Building....\''
+      }
+    }
+
+    stage('Rancher Deploy') {
+      steps {
+        sh 'echo \'Rancher Deploying....\''
       }
     }
 
