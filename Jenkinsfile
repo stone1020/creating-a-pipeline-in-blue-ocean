@@ -1,15 +1,15 @@
 pipeline {
   agent none
   stages {
-    stage('Maven') {
+    stage('node') {
       agent {
         docker {
-          image 'maven:3.3.3'
+          image 'node:7-alpine'
         }
 
       }
       steps {
-        echo 'Maven Build'
+        echo 'Node Build'
       }
     }
 
