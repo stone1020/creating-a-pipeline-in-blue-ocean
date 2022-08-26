@@ -19,7 +19,7 @@ pipeline {
         stage('Maven Build 2') {
           agent any
           steps {
-            sh 'echo "Running..."'
+            sh 'echo \'Running...\''
           }
         }
 
