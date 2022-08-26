@@ -55,4 +55,7 @@ pipeline {
     }
 
   }
+  environment {
+    DB_ENGINE = 'MySQL'
+  }
 }
