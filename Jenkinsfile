@@ -13,7 +13,7 @@ pipeline {
 
         stage('Maven Build 2') {
           steps {
-            sh 'echo \'Maven Building 2 ....\''
+            sh 'echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"'
           }
         }
 
