@@ -9,7 +9,6 @@ pipeline {
     stage('Maven Build') {
       parallel {
         stage('Maven Build') {
-          agent any
           steps {
             sh 'echo \'Maven Building....\''
             echo 'Maven Build'
@@ -17,14 +16,12 @@ pipeline {
         }
 
         stage('Maven Build 2') {
-          agent any
           steps {
             sh 'echo \'Running...\''
           }
         }
 
         stage('Maven Building 3') {
-          agent any
           steps {
             sh 'echo \'Maven Building 3 ....\''
           }
@@ -34,7 +31,6 @@ pipeline {
     }
 
     stage('Test') {
-      agent any
       steps {
         sh 'echo \'Testing....\''
       }
