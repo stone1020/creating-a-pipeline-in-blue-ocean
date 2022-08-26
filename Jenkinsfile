@@ -1,16 +1,34 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:7-alpine'
-    }
-
-  }
+  agent none
   stages {
-    stage('Test') {
-            steps {
-                sh 'node --version'
+    stage('node') {
+      parallel {
+        stage('node') {
+          agent {
+            docker {
+              image 'node:7-alpine'
             }
+
+          }
+          steps {
+            sh 'node --version'
+          }
         }
+
+        stage('maven') {
+          agent {
+            docker {
+              image 'maven:3-alpine'
+            }
+
+          }
+          steps {
+            sh 'mvn -v'
+          }
+        }
+
+      }
+    }
 
     stage('Deliver') {
       steps {
