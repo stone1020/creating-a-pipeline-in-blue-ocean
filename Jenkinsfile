@@ -32,8 +32,19 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        sh 'echo \'Testing....\''
+      parallel {
+        stage('Test') {
+          steps {
+            sh 'echo \'Testing....\''
+          }
+        }
+
+        stage('') {
+          steps {
+            sh 'sh \'node --version\''
+          }
+        }
+
       }
     }
 
