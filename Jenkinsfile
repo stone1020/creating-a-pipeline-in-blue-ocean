@@ -13,9 +13,9 @@ pipeline {
       }
     }
 
-    stage('maven-test') {
+    stage('node-test') {
       steps {
-        sh 'sh \'mvn --version\''
+        sh 'sh \'node --version\''
       }
     }
 
