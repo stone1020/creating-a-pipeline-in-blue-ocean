@@ -9,6 +9,12 @@ pipeline {
     stage('Maven Build') {
       parallel {
         stage('Maven Build') {
+          agent {
+            docker {
+              image 'maven:3.3.3'
+            }
+
+          }
           steps {
             sh 'echo \'Maven Building....\''
             echo 'Maven Build'
@@ -32,7 +38,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'echo \'Testing....\''
+        sh 'sh \'node -v\''
       }
     }
 
