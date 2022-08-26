@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:7-alpine'
-    }
-
-  }
+  agent none
   stages {
     stage('Maven Build') {
       parallel {
-        stage('Maven Build') {
+        stage('Maven') {
           agent {
             docker {
               image 'maven:3.3.3'
@@ -16,20 +11,32 @@ pipeline {
 
           }
           steps {
-            sh 'echo \'Maven Building....\''
+            sh 'sh \'mvn --version\''
             echo 'Maven Build'
           }
         }
 
-        stage('Maven Build 2') {
+        stage('Python') {
+          agent {
+            docker {
+              image 'python:3.5.1'
+            }
+
+          }
           steps {
-            sh 'echo \'Running...\''
+            sh 'sh \'python --version\''
           }
         }
 
-        stage('Maven Building 3') {
+        stage('Node') {
+          agent {
+            docker {
+              image 'node:6.3'
+            }
+
+          }
           steps {
-            sh 'echo \'Maven Building 3 ....\''
+            sh 'sh \'npm --version\''
           }
         }
 
@@ -37,8 +44,25 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        sh 'sh \'node -v\''
+      parallel {
+        stage('maven-test') {
+          steps {
+            sh 'sh \'mvn --version\''
+          }
+        }
+
+        stage('python-test') {
+          steps {
+            sh 'sh \'python --version\''
+          }
+        }
+
+        stage('node-test') {
+          steps {
+            sh 'sh \'npm --version\''
+          }
+        }
+
       }
     }
 
