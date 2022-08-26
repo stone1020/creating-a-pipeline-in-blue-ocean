@@ -9,7 +9,6 @@ pipeline {
 
       }
       steps {
-        sh 'mvn --version'
         echo 'Maven Build'
       }
     }
