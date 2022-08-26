@@ -14,6 +14,12 @@ pipeline {
     }
 
     stage('node-test') {
+      agent {
+        docker {
+          image 'node:7-alpine'
+        }
+
+      }
       steps {
         sh 'sh \'node --version\''
       }
