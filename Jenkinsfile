@@ -19,7 +19,7 @@ pipeline {
         stage('Maven Build 2') {
           agent any
           steps {
-            sh 'echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"'
+            sh 'echo "Running..."'
           }
         }
 
