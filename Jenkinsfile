@@ -6,11 +6,11 @@ pipeline {
 
   }
   stages {
-    stage('node-test') {
-      steps {
-        sh 'echo \'node --version\''
-      }
-    }
+    stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
 
     stage('Deliver') {
       steps {
