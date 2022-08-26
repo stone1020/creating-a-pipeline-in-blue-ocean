@@ -1,7 +1,7 @@
 pipeline {
   agent none
   stages {
-    stage('node') {
+    stage('Build') {
       parallel {
         stage('node') {
           agent {
