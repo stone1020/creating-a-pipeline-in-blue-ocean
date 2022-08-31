@@ -38,18 +38,21 @@ pipeline {
     }
 
     stage('Sonar Check') {
+      agent any
       steps {
         sh 'echo \'Sonar Checking....\''
       }
     }
 
     stage('Docker Build') {
+      agent any
       steps {
         sh 'echo \'Docker Building....\''
       }
     }
 
     stage('Rancher Deploy') {
+      agent any
       steps {
         sh 'echo \'Rancher Deploying....\''
       }
