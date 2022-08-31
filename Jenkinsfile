@@ -31,28 +31,25 @@ pipeline {
     }
 
     stage('Deliver') {
-      agent none
+      agent any
       steps {
         sh 'echo \'Delivering....\''
       }
     }
 
     stage('Sonar Check') {
-      agent none
       steps {
         sh 'echo \'Sonar Checking....\''
       }
     }
 
     stage('Docker Build') {
-      agent none
       steps {
         sh 'echo \'Docker Building....\''
       }
     }
 
     stage('Rancher Deploy') {
-      agent none
       steps {
         sh 'echo \'Rancher Deploying....\''
       }
