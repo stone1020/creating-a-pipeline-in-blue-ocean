@@ -31,6 +31,7 @@ pipeline {
     }
 
     stage('Deliver') {
+      agent none
       steps {
         sh 'echo \'Delivering....\''
       }
