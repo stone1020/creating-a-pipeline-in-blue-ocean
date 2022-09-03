@@ -35,6 +35,7 @@ pipeline {
       agent any
       steps {
         sh 'echo \'Delivering....\''
+        input 'Finished using the web site? (Click "Proceed" to continue)'
       }
     }
 
